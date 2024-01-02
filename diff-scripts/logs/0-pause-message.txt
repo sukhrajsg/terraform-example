@@ -1,0 +1,7 @@
+EXAMPLE
+
+Warning, the diffs ansible playbook will run in 5 minutes from the above time. 
+
+If you do not want it to run make sure to kill the bash script process - Use 'ps aux' to find the task and kill using 'kill <pid>.'
+
+See you, space cowboy.

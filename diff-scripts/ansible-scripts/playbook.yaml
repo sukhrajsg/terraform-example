@@ -1,0 +1,50 @@
+##########################################
+## Author: EXAMPLE 	                    ##
+## Created: EXAMPLE 		              	##
+## Last updated: EXAMPLE 	             	##
+## Title: playbook.yaml                 ##
+##########################################
+
+- name: Test play
+  hosts: mymachine
+  become: true
+  vars:
+    root_dir: /files/diff-scripts/bash-scripts
+  tasks:
+      - name: 0 - Pause the script before it executes; gives the user time to kill process
+        script: '{{root_dir}}/0-pause-before-script-starts.sh'
+      
+      - name: Pause zero
+        ansible.builtin.pause:
+          minutes: 5
+      
+      - name: 1 - Update the mirror on the EC2 and sync it with the "new" bucket
+        script: '{{ root_dir }}/1-get_new_mirror_on_ec2.sh'
+
+      - name: Pause one
+        ansible.builtin.pause:
+          minutes: 1
+
+      - name: 2 - Create the sync output to create the diffs file
+        script: '{{ root_dir }}/2-create_sync_output.sh'
+     
+      - name: Pause two
+        ansible.builtin.pause:
+          minutes: 1
+    
+      - name: 3 - Copy the diffs to the directory
+        script: '{{ root_dir }}/3-copy_to_diffs_dir.sh'
+     
+      - name: Pause three
+        ansible.builtin.pause:
+          minutes: 1
+
+      - name: 4 - Zip the diffs
+        script: '{{ root_dir }}/4-zip_the_diffs_EXAMPLE_dip.sh'
+     
+      - name: Pause four
+        ansible.builtin.pause:
+         minutes: 1
+          
+      - name: 5 - Sync the old and the new 
+        script: '{{ root_dir }}/5-perform_sync_old_new_s3.sh'
