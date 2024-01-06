@@ -4,7 +4,7 @@
 ## Author: EXAMPLE	                    ##
 ## Created: EXAMPLE			            ##
 ## Last updated: EXAMPLE	        	##
-## Title: 5_zip_the_diffs_EXAMPLE.sh	##
+## Title: 4_zip_the_diffs_EXAMPLE.sh	##
 ##########################################
 
 ## Variables ##
