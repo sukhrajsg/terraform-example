@@ -23,7 +23,7 @@ resource "aws_instance" "mirror_ec2" {
   security_groups                      = []
   source_dest_check                    = true
   subnet_id                            = "EXAMPLE"
-  tags                                 = merge(var.tags, { Name = "SAI-DIP-REP-MIRROR" })
+  tags                                 = merge(var.tags, { Name = "EXAMPLE-REP-MIRROR" })
   tenancy                              = "default"
   vpc_security_group_ids = [
     "EXAMPLE",
