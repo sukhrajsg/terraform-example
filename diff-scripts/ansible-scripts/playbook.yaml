@@ -40,7 +40,7 @@
           minutes: 1
 
       - name: 4 - Zip the diffs
-        script: '{{ root_dir }}/4-zip_the_diffs_EXAMPLE_dip.sh'
+        script: '{{ root_dir }}/4-zip_the_diffs_EXAMPLE.sh'
      
       - name: Pause four
         ansible.builtin.pause:
